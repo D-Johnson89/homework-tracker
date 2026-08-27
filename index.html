@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pace — Homework Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header__mark">
+        <span class="header__dot"></span>
+        <h1>Pace</h1>
+      </div>
+      <p class="header__sub">Estimate it. Time it. See how close you got.</p>
+    </header>
+
+    <section class="stats-strip">
+      <div class="stat">
+        <span class="stat__value" id="stat-count">—</span>
+        <span class="stat__label">assignments logged</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value" id="stat-avg-delta">—</span>
+        <span class="stat__label">avg. vs. estimate</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value" id="stat-on-time">—</span>
+        <span class="stat__label">within 10% of estimate</span>
+      </div>
+    </section>
+
+    <section class="add-panel">
+      <form id="add-form" class="add-form">
+        <input id="title" type="text" placeholder="Assignment (e.g. Chapter 4 worksheet)" required autocomplete="off" />
+        <input id="subject" type="text" placeholder="Subject" autocomplete="off" />
+        <input id="minutes" type="number" placeholder="Est. minutes" min="1" required autocomplete="off" />
+        <button type="submit" class="btn btn--add">Add</button>
+      </form>
+    </section>
+
+    <main class="board">
+      <div id="assignment-list" class="assignment-list"></div>
+      <p id="empty-state" class="empty-state">Nothing queued up. Add the first assignment above.</p>
+    </main>
+
+    <aside class="history">
+      <h2>Recent</h2>
+      <ul id="history-list" class="history__list"></ul>
+    </aside>
+
+    <footer class="footer">
+      Timer runs while this tab is open. Auto‑DND and phone‑level notification
+      blocking are stretch goals for a native build — a browser tab can't
+      touch those.
+    </footer>
+  </div>
+
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
